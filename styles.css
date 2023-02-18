@@ -1,3 +1,12 @@
+:root {
+    --lgt-green: #00FFAB;
+    --drk-green: #14C38E;
+    --lime: #B8F1B0;
+    --drk-grey: #1F2937;
+    --lgt-grey: #2F3E53;
+    --fd-grey: #D9D9D9;
+}
+
 body {
     background-color: #000;
     font-family: 'Karla', sans-serif;
@@ -5,29 +14,27 @@ body {
 }
 
 h1 {
-    color: white;
+    color: #FFF;
     font-family: "Karla", sans-serif;
     font-weight: 800;
     margin-bottom: 0px;
     text-align: center;
 }
 
-hr {
-    background-color: #2F3E53;
-    border: 1px solid;
-    margin-bottom: 30px;
-    margin-top: 30px;
+label {
+    color: var(--lgt-green);
 }
 
 p {
-    color: #D9D9D9;
+    color: var(--fd-grey);
+    font-size: 12px;
     margin-top: 10px;
     padding: 0;
     text-align: center;
 }
 
 span {
-    color: #4ADF86;
+    color: var(--lgt-green);
 }
 
 input {
@@ -36,7 +43,7 @@ input {
 }
 
 .btn {
-    background-color: #10B981;
+    background-color: var(--drk-green);
     border: none;
     border-radius: 4px;
     color: white;
@@ -51,10 +58,16 @@ input {
     top: auto;
 }
 
+.btn:hover {
+    background-color: var(--lime);
+    color: var(--drk-grey);
+    cursor: pointer;
+}
+
 .card {
-    background-color: #1F2937;
+    background-color: var(--drk-grey);
     border-radius: 20px;
-    height: 350px;
+    height: 450px;
     padding: 30px 60px;
     width: 500px;
     grid-row: 2/4;
@@ -70,50 +83,32 @@ input {
     grid-template-rows: repeat(3, 1fr);
 }
 
-
-.hidden {
-    visibility: hidden;
+.input-form {
+    padding: 20px;
+    text-align: center;
 }
 
-.parent-div {
+.input-form input{
+    display: inline;
+}
+
+.result-container {
     align-items: center;
     display: flex;
     justify-content: center;
-}
-
-.pwds {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-#first-password {
-    background-color: #273549;
+    margin: 50px;
+    background-color: var(--lgt-grey);
     border: none;
     border-radius: 4px;
-    bottom: -30px;
-    color: #55F991;
-    height: 39px;
-    left: 30px;
-    line-height: 39px;
-    position: relative;
-    right: 396px;
-    text-align: center;
-    width: 211px;
+    height: 50px;
 }
 
-#second-password {
-    background-color: #273549;
-    border: none;
-    border-radius: 4px;
-    bottom: -30px;
-    color: #55F991;
-    height: 39px;
-    left: 30px;
-    line-height: 39px;
-    margin-right: 0px;
-    position: relative;
-    right: 400px;
+#numchar {
     text-align: center;
-    width: 211px;
+    width: 40px;
+}
+
+#password {
+    color: #55F991;
+    text-align: center;
 }

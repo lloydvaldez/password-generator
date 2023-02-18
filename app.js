@@ -2,35 +2,32 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
     "/"
 ];
 
-let firstPassword = document.getElementById("first-password");
-let secondPassword = document.getElementById("second-password");
+let charLengthEl = document.getElementById("numchar");
+let passwordEl = document.getElementById("password");
+let generateEL = document.getElementById("generate");
 
-let password1 = "";
-let password2 = "";
+let password = "";
 
-function generatePassword1() {
-    for (let i = 0; i < 15; i++) {
-        let randomPass1 = Math.floor(Math.random() * characters.length);
-        password1 += characters[randomPass1];
+generateEL.addEventListener('click', () => {
+    const charLength = +charLengthEl.value;
+
+    passwordEl.innerText = generatePassword(
+        charLength
+    );
+});
+
+function generatePassword(charLength) {
+    for (let i = 0; i < charLength; i++) {
+        let randomPass = Math.floor(Math.random() * characters.length);
+        password += characters[randomPass];
     }
-    return password1;
-}
-
-function generatePassword2() {
-    for (let i = 0; i < 15; i++) {
-        let randomPass2 = Math.floor(Math.random() * characters.length);
-        password2 += characters[randomPass2];
-    }
-    return password2;
-}
-
-function reset() {
-    password1 = "";
-    password2 = "";
-}
+    return password;
+};
 
 function generatePasswords() {
+    function reset() {
+        password = "";
+    }
     reset();
-    firstPassword.textContent = generatePassword1();
-    secondPassword.textContent = generatePassword2();
-}
+    passwordEl.textContent = generatePassword();
+};
