@@ -31,3 +31,26 @@ function generatePasswords() {
     reset();
     passwordEl.textContent = generatePassword();
 };
+
+clipboard.addEventListener('click', () => {
+    const textarea = document.createElement("textarea");
+    const password = passwordEl.innerText;
+
+    if(!password) {
+        return;
+    }
+
+	textarea.value = password;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand('copy');
+	textarea.remove();
+
+    let tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied!";
+});
+
+function outFunc() {
+    let tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+}
