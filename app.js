@@ -40,11 +40,11 @@ clipboard.addEventListener('click', () => {
         return;
     }
 
-	textarea.value = password;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand('copy');
-	textarea.remove();
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
 
     let tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Copied!";
